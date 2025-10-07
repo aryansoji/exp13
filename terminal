@@ -1,0 +1,15 @@
+# (Follow the same Arduino IDE setup as Experiment 9)
+# Hardware: Create a voltage divider with the flex sensor and a 10k resistor. Connect the midpoint to analog pin A0.
+# 1. Upload the .ino code to your Arduino.
+
+# --- Running the Node ---
+# Open 3 separate terminals.
+
+# Terminal 1: Start ROS Master
+roscore
+
+# Terminal 2: Start the rosserial connection.
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+# Terminal 3: Echo the raw analog value from the sensor. Bend the sensor to see the value change.
+rostopic echo /flex_sensor
